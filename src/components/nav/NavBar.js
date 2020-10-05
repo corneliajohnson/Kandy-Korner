@@ -25,6 +25,12 @@ export const NavBar = (props) => {
           Customers
         </Link>
       </li>
+
+      <li className="navbar__item">
+        <Link className="navbar_link" to="/employees">
+          Employees
+        </Link>
+      </li>
     </ul>
   );
 };

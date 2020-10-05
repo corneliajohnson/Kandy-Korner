@@ -1,9 +1,11 @@
 import React from "react";
 import { Route } from "react-router-dom";
 import { Home } from "./Home";
-import { LocationCard } from "./locations/LocationCard";
+import { LocationList } from "./locations/LocationList";
+import { LocationProvider } from "./locations/LocationProvider";
 import { CustomerCard } from "./customers/CustomerCard";
 import { ProductCard } from "./products/ProductCard";
+import { EmployeeCard } from "./employees/EmployeeCard";
 
 export const ApplicationViews = () => {
   return (
@@ -16,12 +18,18 @@ export const ApplicationViews = () => {
         <CustomerCard />
       </Route>
 
-      <Route path="/locations">
-        <LocationCard />
-      </Route>
+      <LocationProvider>
+        <Route path="/locations">
+          <LocationList />
+        </Route>
+      </LocationProvider>
 
       <Route path="/products">
         <ProductCard />
+      </Route>
+
+      <Route path="/employees">
+        <EmployeeCard />
       </Route>
     </>
   );
